@@ -136,3 +136,19 @@ function excluirProduto(id) {
         renderizarTabela();
     }
 }
+
+function filtrarProdutos() {
+    const termoBusca = document.getElementById("busca-produto").value.toLowerCase();
+    
+    const linhas = tbodyProdutos.getElementsByTagName("tr");
+
+    for (let i = 0; i < linhas.length; i++) {
+        const nomeProduto = linhas[i].getElementsByTagName("td")[1].innerText.toLowerCase();
+        
+        if (nomeProduto.includes(termoBusca)) {
+            linhas[i].style.display = "";
+        } else {
+            linhas[i].style.display = "none";
+        }
+    }
+}
