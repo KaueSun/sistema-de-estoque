@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-container" class="container">
+        <h2>Login no Estoque</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="ex: admin ou user" required>
+            <input type="password" id="senha" placeholder="ex: 123" required>
+            <button type="submit">Entrar</button>
+            <p id="login-erro" class="erro"></p>
+        </form>
+    </div>
+
+    <div id="app-container" class="container hidden">
+        <header>
+            <h1>Controle de Estoque</h1>
+            <div class="user-info">
+                <span id="user-display"></span>
+                <button id="btn-logout" class="btn-secundario">Sair</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="painel">
+                <h3>Adicionar Novo Produto</h3>
+                <form id="form-produto">
+                    <input type="text" id="nome-produto" placeholder="Nome do Produto" required>
+                    <input type="number" id="qtd-produto" placeholder="Quantidade" required>
+                    <button type="submit">Salvar Produto</button>
+                </form>
+            </div>
+
+            <div class="painel">
+                <h3>Lista de Estoque</h3>
+                <table id="tabela">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Qtd</th>
+                            <th>Criado por</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-produtos">
+                        </tbody>
+                </table>
+                
+                <div id="aviso-permissao" class="dica hidden">
+                    <strong>Obs:</strong> Você só pode editar os produtos que você mesmo criou. A exclusão de produtos é restrita ao Administrador.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
